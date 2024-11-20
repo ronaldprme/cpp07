@@ -6,7 +6,7 @@
 /*   By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:09:25 by rprocopi          #+#    #+#             */
-/*   Updated: 2024/11/19 18:15:31 by rprocopi         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:46:52 by rprocopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class Array
 		Array(void);
 		Array(unsigned int n);
 		Array(const Array &a);
-		
+
 		~Array(void);
-		
+
 		class IndexOutOfBounds: public std::exception
 		{
 			public:
@@ -35,10 +35,9 @@ class Array
 					return ("Error: index out of bounds");
 				}
 		};
-		
+
 		Array			&operator=(const Array &a);
 		T				&operator[](const int n);
 		unsigned int	size(void);
 };
-
 #endif
