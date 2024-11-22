@@ -6,7 +6,7 @@
 #    By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 18:16:29 by rprocopi          #+#    #+#              #
-#    Updated: 2024/11/20 15:37:29 by rprocopi         ###   ########.fr        #
+#    Updated: 2024/11/22 17:29:32 by rprocopi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			=		Array
 
 SOURCE			=		main.cpp
 
-HEADER			= 		Array.tpp
+TEMPLATE		= 		Array.tpp
 
 OBJECT			= 		$(SOURCE:.cpp=.o)
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJECT)
 	@echo "$(GREEN)$(NAME) ......... compile successfully!"
 	@echo "Executable 		./$(NAME) $(RESET) \n"
 	
-%.o: %.cpp $(HEADER)
+%.o: %.cpp $(TEMPLATE)
 	$(COMPILE) $(FLAGS) -c $< -o $@
 
 clean:

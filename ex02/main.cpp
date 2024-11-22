@@ -6,21 +6,21 @@
 /*   By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:07:52 by rprocopi          #+#    #+#             */
-/*   Updated: 2024/11/20 18:23:07 by rprocopi         ###   ########.fr       */
+/*   Updated: 2024/11/22 17:44:42 by rprocopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include "Array.tpp"
 
-#define MAX_VAL	10
+#define MAX_VAL	20
 
 
 int main(int, char **)
 {
+	//Inicializacao dos Arrays
 	Array<int> numbers(MAX_VAL);
 	int *mirror = new int [MAX_VAL];
-
 	
 	Array<std::string> stringArray(4);
 	Array<char> charArray(4);
@@ -33,13 +33,13 @@ int main(int, char **)
 		mirror[i] = value;
 	}
 	//scope
-	
 	{
-		std::cout << numbers.size() << std::endl;
+		std::cout << "Number size: " << numbers.size() << std::endl;
 		Array<int> tmp = numbers;
 		Array<int> test(tmp);
-		std::cout << test.size() << std::endl;
+		std::cout << "Test size  : " << test.size() << std::endl;
 	}
+	
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		std::cout << numbers[i] << " \n";
@@ -49,25 +49,26 @@ int main(int, char **)
 			return (1);
 		}
 	}
+	
+	try
+	{
+		numbers[1] = 2;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	std::cout << std::endl;
 	try
 	{
-		{
-			numbers[2] = 0;
-		}
+		numbers[MAX_VAL - 1] = 50;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	try
-	{
-		numbers[MAX_VAL] = 0;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		numbers[i] = rand();
@@ -85,7 +86,7 @@ int main(int, char **)
 	
 	try
 	{
-		for (unsigned int i = 0; i < 40; i++)
+		for (unsigned int i = 0; i < 4; i++)
 			std::cout<< test[i] ;
 	}
 	catch(const std::exception& e)
@@ -94,7 +95,7 @@ int main(int, char **)
 		std::cerr << e.what() << '\n';
 	}
 
-	std::cout << test.size() << std::endl;
+	std::cout << "\n" << test.size() << std::endl;
 	
 	return (0);
 }

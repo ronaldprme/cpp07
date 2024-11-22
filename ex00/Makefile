@@ -6,7 +6,7 @@
 #    By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 13:39:06 by rprocopi          #+#    #+#              #
-#    Updated: 2024/11/18 14:49:37 by rprocopi         ###   ########.fr        #
+#    Updated: 2024/11/22 17:02:20 by rprocopi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SOURCE		= 		main.cpp
 
 OBJECT		=		$(SOURCE:.cpp=.o)
 
-COMPILE		=		g++
+COMPILE		=		c++
 
 FLAGS		=		-Wall -Wextra -Werror -std=c++98
 

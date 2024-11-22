@@ -6,11 +6,11 @@
 /*   By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:05:51 by rprocopi          #+#    #+#             */
-/*   Updated: 2024/11/18 16:53:38 by rprocopi         ###   ########.fr       */
+/*   Updated: 2024/11/22 17:25:39 by rprocopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "iter.tpp"
 #include <iostream>
 
 void inc(int &i) {
@@ -35,7 +35,7 @@ int main(void) {
     std::cout << std::endl;
     iter(charPtrArray, 2, printData);
     std::cout << std::endl;
-    iter(stringArray, 3, printData);
+    iter(stringArray, 4, printData);
     std::cout << std::endl;
 
     return 0;

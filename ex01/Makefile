@@ -6,7 +6,7 @@
 #    By: rprocopi <mailto:rprocopi@student.42lis    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 15:21:03 by rprocopi          #+#    #+#              #
-#    Updated: 2024/11/18 15:57:47 by rprocopi         ###   ########.fr        #
+#    Updated: 2024/11/22 17:24:00 by rprocopi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,11 @@ NAME			= 		iter
 
 SOURCE			=		main.cpp
 
+TAMPLATE		=		iter.tpp
+
 OBJECT			= 		$(SOURCE:.cpp=.o)
 
-COMPILE			= 		g++
+COMPILE			= 		c++
 
 FLAGS			=		-Wall -Wextra -Werror -std=c++98
 
@@ -31,7 +33,7 @@ $(NAME): $(OBJECT)
 	@echo "$(GREEN)$(NAME) ........ compile successfully!"
 	@echo "Executable	./$(NAME) $(RESET) \n"
 	
-%.o: %.cpp
+%.o: %.cpp $(TAMPLATE)
 	$(COMPILE) $(FLAGS) -c $< -o $@
 
 clean:
